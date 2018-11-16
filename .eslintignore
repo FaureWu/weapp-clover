@@ -1,0 +1,8 @@
+dist/
+.temp/
+.rn_temp/
+node_modules/
+server/
+mock/
+config/
+gulpfile.js

@@ -1,0 +1,24 @@
+{
+  "extends": ["taro", "plugin:prettier/recommended"],
+  "rules": {
+    "no-unused-vars": ["error", { "varsIgnorePattern": "Taro" }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 80,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "parser": "babylon",
+        "semi": false
+      }
+    ],
+    "import/prefer-default-export": 0
+  },
+  "parser": "babel-eslint",
+  "globals": {
+    "CONFIG": true
+  }
+}

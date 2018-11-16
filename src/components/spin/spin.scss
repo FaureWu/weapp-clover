@@ -1,0 +1,65 @@
+@keyframes stretchdelay {
+  0%, 40%, 100% {
+    transform: scaleY(0.6);
+  }  20% {
+    transform: scaleY(1.0);
+  }
+}
+
+.spin {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &.hide {
+    display: none;
+  }
+
+  .overlay {
+    width: 160px;
+    height: 160px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .spin-list {
+    height: 60px;
+
+    .spin-rect {
+      height: 100%;
+      width: 8px;
+      display: inline-block;
+      background: #fff;
+      margin: 0 5px;
+      animation: stretchdelay 1.2s infinite ease-in-out;
+
+      &:nth-child(2) {
+        animation-delay: -1.1s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: -1.0s;
+      }
+
+      &:nth-child(4) {
+        animation-delay: -0.9s;
+      }
+
+      &:nth-child(5) {
+        animation-delay: -0.8s;
+      }
+    }
+  }
+}
