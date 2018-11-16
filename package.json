@@ -1,8 +1,15 @@
 {
 	"name": "ztaro",
 	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
+	"description": "taro combine zoro tool",
+  "main": "index.js",
+  "keywords": [
+    "taro",
+    "zoro",
+    "redux",
+    "alioss",
+    "weapp"
+  ],
 	"scripts": {
 		"build:weapp": "cross-env-shell BUILD_ENV=prod \"taro build --type weapp && npm run upload:oss\"",
 		"build:weapp-dev": "cross-env-shell BUILD_ENV=dev \"taro build --type weapp && npm run upload:oss\"",
