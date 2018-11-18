@@ -59,7 +59,6 @@ const config = {
       SERVER: server,
       DEBUG: appConfig.debug,
     }),
-    TEST: JSON.stringify('test')
   },
   weapp: {
     module: {

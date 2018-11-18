@@ -2,6 +2,9 @@
 
 结合小程序框架[taro](https://github.com/NervJS/taro)，状态管理库[zoro](https://github.com/FaureWu/zoro)，微信小程序开发，h5开发实践方案
 
+## 教程
+* [微信小程序及h5,基于taro，zoro最佳实践探索](https://www.jianshu.com/p/7c27dbbc080f)
+
 ## 演示
 
 <img src="https://img.baobeicang.com/user_upload/rc-upload-1542346706655-4.gif" width="200" /><img src="https://img.baobeicang.com/user_upload/rc-upload-1542346706655-6.gif" width="200" />
