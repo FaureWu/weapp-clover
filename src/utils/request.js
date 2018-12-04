@@ -1,4 +1,5 @@
 import Taro from '@tarojs/taro'
+import { TOKEN_KEY } from '../constants/common'
 
 const HTTP_ERROR = {
   '400': '发出的请求有错误，服务器没有进行新建或修改数据的操作。',
@@ -106,6 +107,9 @@ function throwError(error) {
 export default function request(options) {
   const { url } = options
   Taro.showNavigationBarLoading()
+
+  const token = Taro.getStorageSync(TOKEN_KEY)
+
   return Taro.request(
     resolveParams({
       ...options,
@@ -113,6 +117,7 @@ export default function request(options) {
       mode: 'cors',
       header: {
         'content-type': 'application/json',
+        Authorization: `Bearer ${token}`,
         ...options.header,
       },
     }),

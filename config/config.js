@@ -23,5 +23,5 @@ module.exports = {
     prefix: '@oss',
     formats: ['png', 'jpeg', 'jpg', 'svg'],
   },
-  debug: true,
+  debug: false,
 }

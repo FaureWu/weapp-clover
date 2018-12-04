@@ -1,0 +1,6 @@
+@mixin button-clear {
+  &::after,
+  &::before {
+    display: none;
+  }
+}

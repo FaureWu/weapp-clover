@@ -2,14 +2,14 @@
 	"name": "ztaro",
 	"version": "1.0.0",
 	"description": "taro combine zoro tool",
-  "main": "index.js",
-  "keywords": [
-    "taro",
-    "zoro",
-    "redux",
-    "alioss",
-    "weapp"
-  ],
+	"main": "index.js",
+	"keywords": [
+		"taro",
+		"zoro",
+		"redux",
+		"alioss",
+		"weapp"
+	],
 	"scripts": {
 		"build:weapp": "cross-env-shell BUILD_ENV=prod \"taro build --type weapp && npm run upload:oss\"",
 		"build:weapp-dev": "cross-env-shell BUILD_ENV=dev \"taro build --type weapp && npm run upload:oss\"",
@@ -27,7 +27,7 @@
 	"author": "FaureWu <502556093@qq.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@opcjs/zoro": "^2.0.12",
+		"@opcjs/zoro": "^2.2.2",
 		"@opcjs/zoro-plugin": "^2.1.0",
 		"@tarojs/async-await": "1.1.4",
 		"@tarojs/components": "1.1.4",
@@ -69,7 +69,7 @@
 		"eslint-plugin-taro": "1.1.4",
 		"express": "^4.16.4",
 		"faker": "^4.1.0",
-		"gulp": "^3.9.1",
+		"gulp": "^4.0.0",
 		"gulp-alioss-upload": "^1.0.2",
 		"morgan": "^1.9.1",
 		"node-dev": "^3.1.3",

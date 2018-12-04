@@ -1,0 +1,16 @@
+@import '../../../styles/modal.scss';
+@import '../../../styles/variable.scss';
+
+.modal {
+  @include modal-overlay;
+  display: none;
+
+  &.visible {
+    display: flex;
+  }
+
+  .content {
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+}

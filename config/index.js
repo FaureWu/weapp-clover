@@ -1,13 +1,26 @@
 const path = require('path')
+const fs = require('fs')
 const appConfig = require('./config')
 
-let server = appConfig.server[process.env.BUILD_ENV]
+let localAppConfig = {}
+if (fs.existsSync(require.resolve('./config.local.js'))) {
+  localAppConfig = require('./config.local.js')
+}
+
+let server =
+  localAppConfig.server &&
+  localAppConfig.server[process.env.BUILD_ENV]
+    ? localAppConfig.server[process.env.BUILD_ENV]
+    : appConfig.server[process.env.BUILD_ENV]
 if (process.env.ENABLE_MOCK === 'true') {
   server = 'http://127.0.0.1:3000/api'
 }
 
 const ossOptions = {
-  ...appConfig.oss[process.env.BUILD_ENV],
+  ...(localAppConfig.oss &&
+  localAppConfig.oss[process.env.BUILD_ENV]
+    ? localAppConfig.oss[process.env.BUILD_ENV]
+    : appConfig.oss[process.env.BUILD_ENV]),
   path: appConfig.oss.path,
   prefix: appConfig.oss.prefix,
   formats: appConfig.oss.formats,
@@ -57,7 +70,7 @@ const config = {
   defineConstants: {
     CONFIG: JSON.stringify({
       SERVER: server,
-      DEBUG: appConfig.debug,
+      DEBUG: localAppConfig.debug || appConfig.debug,
     }),
   },
   weapp: {
@@ -101,13 +114,15 @@ const config = {
           rule: {
             alioss: {
               test: /.js|.jsx|.css|.styl|.less|.scss?/,
-              use: [{
-                loader: require.resolve('alioss-upload-loader'),
-                options: ossOptions
-              }]
-            }
-          }
-        }
+              use: [
+                {
+                  loader: require.resolve('alioss-upload-loader'),
+                  options: ossOptions,
+                },
+              ],
+            },
+          },
+        },
       })
     },
   },

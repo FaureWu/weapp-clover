@@ -1,0 +1,36 @@
+@import '../../../styles/variable.scss';
+@import '../../../styles//common.scss';
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  background: white;
+  padding: $page-spacing * 3 $page-spacing $page-spacing;
+
+  .logo {
+    width: 160px;
+    height: 160px;
+    background: url(@oss/logo.png);
+    background-size: 160px 160px;
+    background-color: $grey-background-color;
+    border-radius: 50%;
+  }
+
+  .title {
+    font-size: $title-font-size;
+    margin: $block-spacing-v5 * 3 0 0;
+    color: $accent-color;
+  }
+
+  .btn {
+    @include button-clear;
+    font-size: $btn-font-size;
+    margin: $block-spacing-v5 0 $block-spacing-v5 / 2;
+    background: $main-color;
+    color: $accent-color;
+    padding: 0 $block-spacing-v5 * 2;
+  }
+}

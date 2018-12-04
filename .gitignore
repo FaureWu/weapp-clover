@@ -4,3 +4,4 @@ dist/
 node_modules/
 .DS_Store
 *.log
+config/config.local.js
