@@ -1,7 +1,7 @@
 {
-	"name": "ztaro",
+	"name": "weapp-clover",
 	"version": "1.0.0",
-	"description": "taro combine zoro tool",
+	"description": "",
 	"main": "index.js",
 	"keywords": [
 		"taro",
