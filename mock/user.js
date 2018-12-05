@@ -10,7 +10,7 @@ function userLogin(req, res) {
     code: 'success',
     message: '登录成功',
     // 通过faker模拟生成token
-    token: faker.random.uuid(),
+    token: req.app.locals.token,
     memberId: faker.random.uuid(),
   })
 }

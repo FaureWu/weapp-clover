@@ -10,6 +10,11 @@ class PageUser extends Component {
     navigationBarTitleText: '我的',
   }
 
+  state = {
+    // 请到README.md中查看此参数说明
+    __TAB_PAGE__: true, // eslint-disable-line
+  }
+
   render() {
     return (
       <View className="user">

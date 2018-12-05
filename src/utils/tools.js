@@ -12,3 +12,22 @@ export async function getAuthorize(scopeName) {
 export function weappApiFail(message) {
   return /:fail/.test(message)
 }
+
+export function throttle(handler, time) {
+  let can = true
+  return function() {
+    if (can) {
+      can = false
+      handler()
+      setTimeout(() => {
+        can = true
+      }, time)
+    }
+  }
+}
+
+export function delay(time) {
+  return new Promise(resolve => {
+    setTimeout(resolve, time)
+  })
+}

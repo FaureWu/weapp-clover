@@ -13,13 +13,12 @@ import './login.scss'
 }))
 class ComponentCommonLogin extends Component {
   handleUploadUserInfo = ({
-    detail: { errMsg, rawData, signature, encryptedData, iv, userInfo },
+    detail: { errMsg, rawData, signature, encryptedData, iv },
   }) => {
     if (!weappApiFail(errMsg)) {
       dispatcher.user.uploadInfo({ rawData, signature, encryptedData, iv })
       dispatcher.user.update({ authorize: true })
       Taro.showTabBar()
-      console.log(userInfo)
     }
   }
 

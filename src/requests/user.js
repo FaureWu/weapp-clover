@@ -4,6 +4,9 @@ export function userLogin(data) {
   return request({
     url: '/v1/user/login',
     data,
+    header: {
+      noAuth: true,
+    },
     method: 'POST',
   })
 }

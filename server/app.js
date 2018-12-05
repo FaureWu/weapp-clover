@@ -3,10 +3,14 @@ var express = require('express')
 var path = require('path')
 var cookieParser = require('cookie-parser')
 var logger = require('morgan')
+var faker = require('faker')
 
 var mock = require('./routes/mock')
+var geteway = require('./routes/gateway')
 
 var app = express()
+
+app.locals.token = faker.random.uuid()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -24,7 +28,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
-
+app.use(geteway)
 app.use('/api', mock)
 
 // catch 404 and forward to error handler

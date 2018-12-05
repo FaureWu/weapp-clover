@@ -10,6 +10,11 @@ class PageHome extends Component {
     navigationBarTitleText: '四叶草庄园',
   }
 
+  state = {
+    // 请到README.md中查看此参数说明
+    __TAB_PAGE__: true, // eslint-disable-line
+  }
+
   componentDidMount() {}
 
   render() {
