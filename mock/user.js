@@ -11,7 +11,6 @@ function userLogin(req, res) {
     message: '登录成功',
     // 通过faker模拟生成token
     token: req.app.locals.token,
-    memberId: faker.random.uuid(),
   })
 }
 
@@ -31,6 +30,7 @@ function userGetInfo(req, res) {
     code: 'success',
     message: '获取用户信息成功',
     memberInfo: {
+      memberId: faker.random.uuid(),
       nickName: 'Faure',
       avatarUrl: 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJS8AiaqOQqE1j3qHCbiaNKF9D9BgtQuE6gFXoXPKUibRMeWvTO55TSeblaMIzFfp3lGdJt3qUPCibBTQ/132',
       city: '成都',

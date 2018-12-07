@@ -10,19 +10,24 @@ export default {
   mixins: ['common'],
 
   state: {
-    memberId: '',
     authorize: true,
     memberInfo: {},
   },
 
   async setup({ put }) {
-    const authorize = await getAuthorize('userInfo')
-    if (!authorize) {
+    try {
+      const authorize = await getAuthorize('userInfo')
+      if (!authorize) {
+        Taro.hideTabBar()
+      } else {
+        put({ type: 'getInfo' })
+      }
+
+      put({ type: 'update', payload: { authorize } })
+    } catch (error) {
       Taro.hideTabBar()
-    } else {
-      put({ type: 'getInfo' })
+      put({ type: 'update', payload: { authorize: false } })
     }
-    put({ type: 'update', payload: { authorize } })
 
     try {
       await Taro.checkSession()
@@ -40,10 +45,9 @@ export default {
   },
 
   effects: {
-    async login(action, { put }) {
+    async login() {
       const { code } = await Taro.login()
-      const { token, memberId } = await userLogin({ code })
-      put({ type: 'update', payload: { memberId } })
+      const { token } = await userLogin({ code })
       await Taro.setStorage({ key: TOKEN_KEY, data: token })
     },
     async uploadInfo(
