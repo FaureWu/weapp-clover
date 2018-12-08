@@ -23,8 +23,10 @@ class PageRelogin extends Component {
     const { params: { redirectUrl, isTabbar } = {} } = this.$router
     const url = decodeURIComponent(redirectUrl)
     dispatcher.user
-      .login()
+      .login({}, { noAuth: true })
       .then(() => {
+        Taro.eventCenter.trigger('login')
+        dispatcher.user.getInfo()
         if (isTabbar) {
           Taro.switchTab({ url })
         } else {

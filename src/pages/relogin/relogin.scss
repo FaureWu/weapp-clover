@@ -28,5 +28,7 @@
     background: $main-color;
     color: $accent-color;
     padding: 0 $block-spacing-v5 * 2;
+    height: $btn-size-default;
+    line-height: $btn-size-default;
   }
 }

@@ -1,11 +1,12 @@
 import Taro, { Component } from '@tarojs/taro'
 import '@tarojs/async-await'
 import { Provider } from '@tarojs/redux'
-import zoro from '@opcjs/zoro'
+import zoro, { dispatcher } from '@opcjs/zoro'
 
 import models from './models'
 import mixins from './mixins'
 import { TOKEN_KEY } from './constants/common'
+import { redirectToRelogin } from './utils/routerHelper'
 
 import './app.scss'
 
@@ -36,8 +37,9 @@ app.use(mixins)
  * 并且前端所有的接口调用都发生在页面中，难以在页面中统一控制接口必须在登录完成后才触发调用
  * 因此在这里设置登录拦截器，拦截所有需要预先登录的接口，等待登录完成后返回
  */
-app.intercept.effect(async action => {
-  if (action.meta && action.meta.noAuth) return action
+app.intercept.effect(async (action = {}) => {
+  const { meta = {} } = action
+  if (meta.noAuth) return action
 
   try {
     const token = Taro.getStorageSync(TOKEN_KEY)
@@ -100,6 +102,15 @@ class App extends Component {
 
   componentDidMount() {
     app.setup()
+    dispatcher.user
+      .checkLogin({}, { noAuth: true })
+      .then(() => Taro.eventCenter.trigger('login'))
+      .catch(() => {
+        dispatcher.user
+          .login({}, { noAuth: true })
+          .then(() => Taro.eventCenter.trigger('login'))
+          .catch(() => redirectToRelogin())
+      })
   }
 
   componentDidShow() {}

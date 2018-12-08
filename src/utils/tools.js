@@ -1,5 +1,7 @@
 import Taro from '@tarojs/taro'
 
+import { TOKEN_KEY } from '../constants/common'
+
 export async function getAuthorize(scopeName) {
   try {
     const { authSetting } = await Taro.getSetting()
@@ -29,5 +31,17 @@ export function throttle(handler, time) {
 export function delay(time) {
   return new Promise(resolve => {
     setTimeout(resolve, time)
+  })
+}
+
+export function checkToken() {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const token = await Taro.getStorage({ key: TOKEN_KEY })
+      if (token) resolve()
+      else reject()
+    } catch (error) {
+      reject()
+    }
   })
 }
