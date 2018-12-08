@@ -1,7 +1,6 @@
 import Taro from '@tarojs/taro'
 
-import { throttle, delay } from '../utils/tools'
-import { getCurrentPageTypeAndUrlWithArgs } from '../utils/routerHelper'
+import { redirectToRelogin } from '../utils/routerHelper'
 import { TOKEN_KEY } from '../constants/common'
 
 const HTTP_ERROR = {
@@ -48,23 +47,6 @@ function resolveParams(options) {
 
   return { ...options, url, data }
 }
-
-const redirectToRelogin = throttle(async function() {
-  // 这里的轮询是为了确保，页面已经ready，然后进行跳转
-  while (true) {
-    const { url, isTabbar } = getCurrentPageTypeAndUrlWithArgs()
-    const redirectUrl = encodeURIComponent(`/${url}`)
-
-    if (url) {
-      Taro.redirectTo({
-        url: `/pages/relogin/relogin?isTabbar=${isTabbar}&redirectUrl=${redirectUrl}`,
-      })
-      break
-    }
-
-    await delay(500)
-  }
-}, 1000)
 
 /**
  * 检查http状态值
