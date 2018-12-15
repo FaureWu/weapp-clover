@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 import './modal.scss'
 
-class ComponentCommonModal extends Component {
+class ComponentBaseModal extends Component {
   defaultProps = {
     visible: false,
   }
@@ -20,4 +20,4 @@ class ComponentCommonModal extends Component {
   }
 }
 
-export default ComponentCommonModal
+export default ComponentBaseModal

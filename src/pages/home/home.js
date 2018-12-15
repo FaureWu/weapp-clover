@@ -1,13 +1,18 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View } from '@tarojs/components'
+import { dispatcher } from '@opcjs/zoro'
 
 import ComponentCommonLogin from '../../components/common/login/login'
+import ComponentCommonSlogan from '../../components/common/slogan/slogan'
+import ComponentHomeNavigation from '../../components/home/navigation/navigation'
+import ComponentHomeCarousel from '../../components/home/carousel/carousel'
+import ComponentHomeBrand from '../../components/home/brand/brand'
 
 import './home.scss'
 
 class PageHome extends Component {
   config = {
-    navigationBarTitleText: '四叶草庄园',
+    enablePullDownRefresh: true,
   }
 
   state = {
@@ -15,13 +20,32 @@ class PageHome extends Component {
     __TAB_PAGE__: true, // eslint-disable-line
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    dispatcher.banner.getBannerInfo()
+    dispatcher.brand.getHotBrandList()
+  }
+
+  onPullDownRefresh() {
+    Promise.all([
+      dispatcher.banner.getBannerInfo(),
+      dispatcher.brand.getHotBrandList(),
+    ])
+      .then(Taro.stopPullDownRefresh)
+      .catch(Taro.stopPullDownRefresh)
+  }
+
+  handleGoSearch = () => Taro.navigateTo({ url: '/pages/search/search' })
 
   render() {
     return (
       <View className="home">
         <ComponentCommonLogin />
-        <Text>首页</Text>
+        <ComponentHomeNavigation onSearch={this.handleGoSearch} />
+        <ComponentHomeCarousel />
+        <View class="content">
+          <ComponentCommonSlogan />
+          <ComponentHomeBrand />
+        </View>
       </View>
     )
   }

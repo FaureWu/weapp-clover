@@ -1,0 +1,52 @@
+@import '../../../styles/variable.scss';
+@import '../../../styles/iconfont/iconfont.scss';
+
+$tool-icon-height: $navigation-height - 14PX;
+$tool-icon-width: 30PX;
+
+.navigation {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  box-shadow: $navigation-box-shadow;
+
+  &.padding {
+    padding: 0 0 0 5PX;
+  }
+
+  .tools {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    .back,
+    .home {
+      width: $tool-icon-width;
+      height: $tool-icon-height;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-size: $navigation-icon-font-size;
+    }
+  }
+
+  .title {
+    flex-shrink: 1;
+    flex-grow: 1;
+    margin: 0 $tool-icon-width * 2 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: $navigation-font-size;
+  }
+}

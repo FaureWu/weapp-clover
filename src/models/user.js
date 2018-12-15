@@ -1,6 +1,6 @@
 import Taro from '@tarojs/taro'
 
-import { userLogin, userUploadInfo, userGetInfo } from '../requests/user'
+import { userLogin, uploadUserInfo, getUserInfo } from '../requests/user'
 import { TOKEN_KEY } from '../constants/common'
 import { getAuthorize, checkToken } from '../utils/tools'
 
@@ -12,20 +12,22 @@ export default {
   state: {
     authorize: true,
     memberInfo: {},
+    systemInfo: {},
   },
 
   async setup({ put }) {
+    Taro.getSystemInfo().then(systemInfo =>
+      put({ type: 'update', payload: { systemInfo } }),
+    )
+
     try {
       const authorize = await getAuthorize('userInfo')
-      if (!authorize) {
-        Taro.hideTabBar()
-      } else {
+      if (authorize) {
         put({ type: 'getInfo' })
       }
 
       put({ type: 'update', payload: { authorize } })
     } catch (error) {
-      Taro.hideTabBar()
       put({ type: 'update', payload: { authorize: false } })
     }
   },
@@ -46,11 +48,11 @@ export default {
       },
       { put },
     ) {
-      await userUploadInfo({ rawData, signature, encryptedData, iv })
+      await uploadUserInfo({ rawData, signature, encryptedData, iv })
       put({ type: 'getInfo' })
     },
     async getInfo(action, { put }) {
-      const { memberInfo } = await userGetInfo()
+      const { memberInfo } = await getUserInfo()
       put({ type: 'update', payload: { memberInfo } })
     },
   },
