@@ -45,3 +45,5 @@ export function checkToken() {
     }
   })
 }
+
+export function noop() {}

@@ -64,13 +64,15 @@ class App extends Component {
       'pages/shop/shop',
       'pages/user/user',
       'pages/relogin/relogin',
+      'pages/search/search',
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#222',
+      navigationBarBackgroundColor: '#2f3333',
       navigationBarTitleText: '四叶草庄园',
       navigationBarTextStyle: 'white',
-      backgroundColor: '#222',
+      backgroundColor: '#2f3333',
+      navigationStyle: 'custom',
     },
     tabBar: {
       backgroundColor: '#fff',

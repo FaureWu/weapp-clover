@@ -3,7 +3,7 @@ import { View, Text, Button } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { dispatcher } from '@opcjs/zoro'
 
-import ComponentCommonModal from '../modal/modal'
+import ComponentBaseModal from '../../base/modal/modal'
 import { weappApiFail } from '../../../utils/tools'
 
 import './login.scss'
@@ -18,7 +18,6 @@ class ComponentCommonLogin extends Component {
     if (!weappApiFail(errMsg)) {
       dispatcher.user.uploadInfo({ rawData, signature, encryptedData, iv })
       dispatcher.user.update({ authorize: true })
-      Taro.showTabBar()
     }
   }
 
@@ -26,7 +25,7 @@ class ComponentCommonLogin extends Component {
     const { authorize } = this.props
 
     return (
-      <ComponentCommonModal visible={!authorize}>
+      <ComponentBaseModal visible={!authorize}>
         <View className="login">
           <View className="logo" />
           <Text className="title">欢迎加入四叶草庄园</Text>
@@ -39,7 +38,7 @@ class ComponentCommonLogin extends Component {
             微信登录
           </Button>
         </View>
-      </ComponentCommonModal>
+      </ComponentBaseModal>
     )
   }
 }

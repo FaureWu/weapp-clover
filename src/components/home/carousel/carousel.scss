@@ -1,0 +1,41 @@
+@import '../../../styles/variable.scss';
+
+.carousel {
+  position: relative;
+  background: $main-color;
+
+  .swiper {
+    height: 300px;
+    padding: $block-spacing-v4 0;
+
+    .image {
+      width: 654px;
+      height: 100%;
+      border-radius: $border-radius;
+    }
+  }
+
+  .dots {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 $page-spacing;
+    width: 100%;
+    height: 10px;
+    box-sizing: border-box;
+
+    .dot {
+      width: 20px;
+      height: 2px;
+      margin: 0 $block-spacing-v1 / 3;
+      background: $placeholder-icon-color;
+      transition: width .5s;
+
+      &.dot-active {
+        width: 30px;
+        background: $accent-color;
+      }
+    }
+  }
+}

@@ -11,7 +11,7 @@ export function userLogin(data) {
   })
 }
 
-export function userUploadInfo(data) {
+export function uploadUserInfo(data) {
   return request({
     url: '/v1/user/info',
     data,
@@ -19,7 +19,7 @@ export function userUploadInfo(data) {
   })
 }
 
-export function userGetInfo() {
+export function getUserInfo() {
   return request({
     url: '/v1/user/info',
     method: 'GET',

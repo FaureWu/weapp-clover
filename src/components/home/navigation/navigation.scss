@@ -1,0 +1,49 @@
+@import '../../../styles/variable.scss';
+@import '../../../styles/iconfont/iconfont.scss';
+
+$search-height: $navigation-height - 14PX;
+$search-margin: 20PX;
+$search-background-color: #222;
+
+.navigation {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  box-shadow: $navigation-box-shadow;
+
+  .logo {
+    width: $navigation-height;
+    height: $navigation-height;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .search {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: $search-height;
+    border-radius: $search-height;
+    margin: 0 $capsule-width + $search-margin 0 0;
+    background: $search-background-color;
+
+    .icon {
+      font-size: $navigation-icon-font-size;
+      margin: $search-height / 4;
+      color: $placeholder-text-color;
+    }
+
+    .text {
+      color: $placeholder-text-color;
+      font-size: 13PX;
+    }
+  }
+}

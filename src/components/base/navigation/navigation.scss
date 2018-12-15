@@ -1,0 +1,26 @@
+@import '../../../styles/variable.scss';
+
+.navigation {
+  position: relative;
+  background: transparent;
+
+  .bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: $navigation-height;
+    z-index: 1;
+    font-size: $navigation-font-size;
+  }
+
+  .placeholder {
+    display: block;
+    height: $navigation-height;
+    background: transparent;
+  }
+}

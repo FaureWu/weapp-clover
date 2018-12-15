@@ -1,0 +1,40 @@
+@import "../../../styles/variable.scss";
+
+.brand {
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  box-sizing: border-box;
+  background: $main-color;
+
+  .item {
+    display: inline-block;
+    width: 166px;
+    height: 164rpx;
+    text-align: center;
+    margin-right: $block-spacing-v1;
+    border-radius: $border-radius;
+    margin-top: $block-spacing-v1;
+    margin-bottom: $block-spacing-v1;
+    background: white;
+
+    &:first-child {
+      margin-left: $block-spacing-v4;
+    }
+
+    &:last-child {
+      margin-right: $block-spacing-v4;
+    }
+
+    .image {
+      width: 100px;
+      height: 100px;
+      margin: $block-spacing-v2 0 0 0;
+    }
+
+    .text {
+      font-size: $tip-font-size;
+      color: $accent-color;
+    }
+  }
+}

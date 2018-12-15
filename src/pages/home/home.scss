@@ -1,0 +1,9 @@
+@import '../../styles/variable.scss';
+
+.home {
+  min-height: 100vh;
+
+  .content {
+    overflow: hidden;
+  }
+}

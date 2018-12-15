@@ -2,8 +2,8 @@ $model-index: 1000;
 
 $border-radius: 8px;
 
-$content-background-color: #fafafa;
-$main-color: #222;
+$content-background-color: #f5f5f5;
+$main-color: #2f3333;
 $overlay-color: rgba(#3d3d3d, .3);
 $accent-color: #e1b621;
 $divide-line-color: #f5f5f5;
@@ -11,6 +11,7 @@ $grey-background-color: #f5f5f5;
 
 $placeholder-icon-color: #e9e9e9;
 $placeholder-icon-size: 200px;
+$placeholder-text-color: #999;
 
 $page-spacing: 24px;
 
@@ -30,3 +31,16 @@ $tip-font-size: 22px;
 $btn-size-small: 66rpx;
 $btn-size-default: 80rpx;
 $btn-size-big: 94rpx;
+
+$font-placeholder-color: #ccc;
+
+$box-shadow: 2px -4px 30px 0 rgba(226,226,226,0.43);
+
+$capsule-padding: 6PX;
+$capsule-height: 32PX;
+$capsule-width: 88PX;
+
+$navigation-height: $capsule-padding * 2 + $capsule-height;
+$navigation-font-size: 15PX;
+$navigation-icon-font-size: 25PX;
+$navigation-box-shadow: 0 2PX 2PX #222;
