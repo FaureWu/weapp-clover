@@ -15,9 +15,14 @@ export function pageReady() {
   })
 }
 
+export function isTabbarPage(page) {
+  const { __data__ } = page || Taro.getCurrentPages().pop() || {}
+  return !!__data__.__TAB_PAGE__
+}
+
 export function getCurrentPageTypeAndUrlWithArgs() {
-  const { route, options = {}, __data__ = {} } =
-    Taro.getCurrentPages().pop() || {}
+  const currentPage = Taro.getCurrentPages().pop() || {}
+  const { route, options = {} } = currentPage
 
   const search = Object.keys(options)
     .map(key => `${key}=${options[key]}`)
@@ -25,7 +30,11 @@ export function getCurrentPageTypeAndUrlWithArgs() {
 
   const url = search ? `${route}?${search}` : route
 
-  return { url, isTabbar: __data__.__TAB_PAGE__ }
+  return { url, isTabbar: isTabbarPage(currentPage) }
+}
+
+export function getCurrentPage() {
+  return Taro.getCurrentPages().pop() || {}
 }
 
 export const redirectToRelogin = throttle(async function() {
@@ -36,7 +45,9 @@ export const redirectToRelogin = throttle(async function() {
 
   if (url) {
     Taro.redirectTo({
-      url: `/pages/relogin/relogin?isTabbar=${isTabbar}&redirectUrl=${redirectUrl}`,
+      url: `/${
+        PAGE.PAGES.RELOGIN.path
+      }?isTabbar=${isTabbar}&redirectUrl=${redirectUrl}`,
     })
   }
 }, 1000)

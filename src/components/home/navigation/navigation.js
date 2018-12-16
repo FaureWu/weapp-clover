@@ -7,6 +7,10 @@ import ComponentBaseNavigation from '../../base/navigation/navigation'
 import './navigation.scss'
 
 class ComponentHomeNavigation extends Component {
+  static options = {
+    addGlobalClass: true,
+  }
+
   static defaultProps = {
     onSearch: noop,
   }

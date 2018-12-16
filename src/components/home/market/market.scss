@@ -1,0 +1,38 @@
+@import '../../../styles/variable.scss';
+
+$maket-height: 200px;
+$maket-width: 340px;
+
+.market {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: rgba(white, .9);
+  padding: $block-spacing-v4 $page-spacing;
+
+  .item {
+    width: $maket-width;
+    height: $maket-height;
+    background-color: $content-background-color;
+    border-radius: $border-radius;
+
+    &:first-child {
+      margin: 0 $block-spacing-v4 / 2 0 0;
+    }
+
+    &:last-child {
+      margin: 0 0 0 $block-spacing-v4 / 2;
+    }
+
+    &.hot-cake {
+      background-image: url(@oss/hot-cake.jpeg);
+      background-size: $maket-width $maket-height;
+    }
+
+    &.red-packet {
+      background-image: url(@oss/red-packet.jpeg);
+      background-size: $maket-width $maket-height;
+    }
+  }
+}

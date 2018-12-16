@@ -1,5 +1,4 @@
 @import '../../../styles/variable.scss';
-@import '../../../styles/iconfont/iconfont.scss';
 
 $tool-icon-height: $navigation-height - 14PX;
 $tool-icon-width: 30PX;
@@ -24,8 +23,6 @@ $tool-icon-width: 30PX;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-grow: 0;
-    flex-shrink: 0;
 
     .back,
     .home {
@@ -40,13 +37,13 @@ $tool-icon-width: 30PX;
   }
 
   .title {
-    flex-shrink: 1;
-    flex-grow: 1;
-    margin: 0 $tool-icon-width * 2 0 0;
+    position: absolute;
     display: flex;
+    width: 100%;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     font-size: $navigation-font-size;
+    z-index: -1;
   }
 }

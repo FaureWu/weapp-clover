@@ -59,50 +59,23 @@ if (CONFIG.DEBUG) {
 }
 class App extends Component {
   config = {
-    pages: [
-      'pages/home/home',
-      'pages/shop/shop',
-      'pages/user/user',
-      'pages/relogin/relogin',
-      'pages/search/search',
-    ],
+    pages: PAGE.CONFIG_PAGES,
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#2f3333',
-      navigationBarTitleText: '四叶草庄园',
-      navigationBarTextStyle: 'white',
       backgroundColor: '#2f3333',
       navigationStyle: 'custom',
     },
     tabBar: {
       backgroundColor: '#fff',
-      color: '#000',
-      selectedColor: '#e1b621',
+      color: '#fff',
+      selectedColor: '#fff',
       borderStyle: 'white',
-      list: [
-        {
-          pagePath: 'pages/home/home',
-          text: '首页',
-          iconPath: 'assets/tabbar/home.png',
-          selectedIconPath: 'assets/tabbar/home-active.png',
-        },
-        {
-          pagePath: 'pages/shop/shop',
-          text: '商店',
-          iconPath: 'assets/tabbar/shop.png',
-          selectedIconPath: 'assets/tabbar/shop-active.png',
-        },
-        {
-          pagePath: 'pages/user/user',
-          text: '我的',
-          iconPath: 'assets/tabbar/user.png',
-          selectedIconPath: 'assets/tabbar/user-active.png',
-        },
-      ],
+      list: PAGE.CONFIG_TABBAR_LIST,
     },
   }
 
   componentDidMount() {
+    Taro.hideTabBar()
     app.setup()
     dispatcher.user
       .checkLogin({}, { noAuth: true })

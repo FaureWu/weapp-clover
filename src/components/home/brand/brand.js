@@ -8,7 +8,7 @@ import './brand.scss'
   brands: brand.brands,
 }))
 class ComponentHomeBrand extends Component {
-  defaultProps = {
+  static defaultProps = {
     brands: [],
   }
 

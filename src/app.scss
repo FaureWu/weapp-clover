@@ -1,6 +1,65 @@
 @import './styles/variable.scss';
-@import './styles/iconfont/iconfont.scss';
 
 page {
   min-height: 100vh;
 }
+
+@font-face {
+  font-family: "iconfont";
+  src: url('./styles/iconfont.ttf') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+.icon-free-shipping:before { content: "\e606"; }
+
+.icon-close:before { content: "\e641"; }
+
+.icon-delete:before { content: "\e645"; }
+
+.icon-setting:before { content: "\e64b"; }
+
+.icon-redpacket:before { content: "\e657"; }
+
+.icon-coupon:before { content: "\e65a"; }
+
+.icon-search:before { content: "\e613"; }
+
+.icon-shop:before { content: "\ea8b"; }
+
+.icon-share:before { content: "\e60f"; }
+
+.icon-liwu:before { content: "\e685"; }
+
+.icon-cart:before { content: "\e60e"; }
+
+.icon-arrow-down:before { content: "\e615"; }
+
+.icon-clover:before { content: "\e604"; }
+
+.icon-arrow-left:before { content: "\e610"; }
+
+.icon-quality:before { content: "\e63d"; }
+
+.icon-arrow-right:before { content: "\e600"; }
+
+.icon-service:before { content: "\e603"; }
+
+.icon-login-fail:before { content: "\e63b"; }
+
+.icon-order-empty:before { content: "\e646"; }
+
+.icon-home:before { content: "\e601"; }
+
+.icon-redpacket-empty:before { content: "\e65b"; }
+
+.icon-user:before { content: "\e6a8"; }
+
+.icon-arrow-up:before { content: "\e602"; }
+

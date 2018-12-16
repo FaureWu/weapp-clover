@@ -8,6 +8,10 @@ import './navigation.scss'
   statusBarHeight: user.systemInfo.statusBarHeight,
 }))
 class ComponentBaseNavigation extends Component {
+  static options = {
+    addGlobalClass: true,
+  }
+
   static defaultProps = {
     color: 'white',
     backgroundColor: '#2f3333',
