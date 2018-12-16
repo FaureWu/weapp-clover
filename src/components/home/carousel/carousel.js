@@ -9,7 +9,7 @@ import './carousel.scss'
   banners: banner.banners,
 }))
 class ComponentHomeCarousel extends Component {
-  defaultProps = {
+  static defaultProps = {
     banners: [],
   }
 

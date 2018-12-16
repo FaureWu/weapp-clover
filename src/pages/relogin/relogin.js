@@ -6,10 +6,6 @@ import classNames from 'classnames'
 import './relogin.scss'
 
 class PageRelogin extends Component {
-  config = {
-    navigationBarTitleText: '登录',
-  }
-
   state = {
     error: false,
   }

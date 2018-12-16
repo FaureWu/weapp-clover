@@ -4,6 +4,10 @@ import { View, Text } from '@tarojs/components'
 import './slogan.scss'
 
 class ComponentCommonSlogan extends Component {
+  static options = {
+    addGlobalClass: true,
+  }
+
   render() {
     return (
       <View className="slogan">

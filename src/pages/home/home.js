@@ -4,9 +4,11 @@ import { dispatcher } from '@opcjs/zoro'
 
 import ComponentCommonLogin from '../../components/common/login/login'
 import ComponentCommonSlogan from '../../components/common/slogan/slogan'
+import ComponentCommonTabbar from '../../components/common/tabbar/tabbar'
 import ComponentHomeNavigation from '../../components/home/navigation/navigation'
 import ComponentHomeCarousel from '../../components/home/carousel/carousel'
 import ComponentHomeBrand from '../../components/home/brand/brand'
+import ComponentHomeMarket from '../../components/home/market/market'
 
 import './home.scss'
 
@@ -34,7 +36,7 @@ class PageHome extends Component {
       .catch(Taro.stopPullDownRefresh)
   }
 
-  handleGoSearch = () => Taro.navigateTo({ url: '/pages/search/search' })
+  handleGoSearch = () => Taro.navigateTo({ url: `/${PAGE.PAGES.SEARCH.path}` })
 
   render() {
     return (
@@ -45,7 +47,9 @@ class PageHome extends Component {
         <View class="content">
           <ComponentCommonSlogan />
           <ComponentHomeBrand />
+          <ComponentHomeMarket />
         </View>
+        <ComponentCommonTabbar share />
       </View>
     )
   }

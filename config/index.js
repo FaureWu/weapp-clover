@@ -1,6 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const appConfig = require('./config')
+const page = require('./page')
 
 let localAppConfig = {}
 if (fs.existsSync(require.resolve('./config.local.js'))) {
@@ -13,7 +14,7 @@ let server =
     ? localAppConfig.server[process.env.BUILD_ENV]
     : appConfig.server[process.env.BUILD_ENV]
 if (process.env.ENABLE_MOCK === 'true') {
-  server = 'http://127.0.0.1:3000/api'
+  server = 'http://localhost:3000/api'
 }
 
 const ossOptions = {
@@ -72,6 +73,7 @@ const config = {
       SERVER: server,
       DEBUG: localAppConfig.debug || appConfig.debug,
     }),
+    PAGE: JSON.stringify(page),
   },
   weapp: {
     module: {
