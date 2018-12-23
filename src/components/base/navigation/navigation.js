@@ -2,7 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
-import './navigation.scss'
+import styles from './navigation.scss'
 
 @connect(({ user }) => ({
   statusBarHeight: user.systemInfo.statusBarHeight,
@@ -27,11 +27,11 @@ class ComponentBaseNavigation extends Component {
     }
 
     return (
-      <View className="navigation">
-        <View className="bar" style={barStyle}>
+      <View className={styles.navigation}>
+        <View className={styles.bar} style={barStyle}>
           {this.props.children}
         </View>
-        <View className="placeholder" style={barStyle} />
+        <View className={styles.placeholder} style={barStyle} />
       </View>
     )
   }

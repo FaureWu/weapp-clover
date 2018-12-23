@@ -2,19 +2,46 @@ import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import classNames from 'classnames'
 
-import './modal.scss'
+import styles from './modal.scss'
 
 class ComponentBaseModal extends Component {
-  defaultProps = {
+  static defaultProps = {
     visible: false,
+  }
+
+  state = {
+    show: true,
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { show } = this.state
+    console.log(show, nextProps.visible)
+    if (nextProps.visible && show) {
+      Taro.hideTabBar()
+    } else {
+      Taro.showTabBar()
+    }
+  }
+
+  componentDidShow() {
+    const { visible } = this.props
+    if (visible) Taro.hideTabBar()
+    this.setState({ show: true })
+  }
+
+  componentDidHide() {
+    this.setState({ show: false })
   }
 
   render() {
     const { visible } = this.props
 
     return (
-      <View className={classNames('modal', { visible })} onTouchMove>
-        <View className="content">{this.props.children}</View>
+      <View
+        className={classNames(styles.modal, { [styles.show]: visible })}
+        onTouchMove
+      >
+        <View className={styles.content}>{this.props.children}</View>
       </View>
     )
   }

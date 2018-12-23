@@ -45,9 +45,7 @@ export const redirectToRelogin = throttle(async function() {
 
   if (url) {
     Taro.redirectTo({
-      url: `/${
-        PAGE.PAGES.RELOGIN.path
-      }?isTabbar=${isTabbar}&redirectUrl=${redirectUrl}`,
+      url: `/pages/relogin/relogin?isTabbar=${isTabbar}&redirectUrl=${redirectUrl}`,
     })
   }
 }, 1000)

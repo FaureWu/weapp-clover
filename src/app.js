@@ -2,13 +2,14 @@ import Taro, { Component } from '@tarojs/taro'
 import '@tarojs/async-await'
 import { Provider } from '@tarojs/redux'
 import zoro, { dispatcher } from '@opcjs/zoro'
+import { createLoading } from '@opcjs/zoro-plugin'
 
 import models from './models'
 import mixins from './mixins'
 import { TOKEN_KEY } from './constants/common'
 import { redirectToRelogin } from './utils/routerHelper'
 
-import './app.scss'
+import './app.global.scss'
 
 function waitLogin() {
   return new Promise(resolve => {
@@ -31,6 +32,7 @@ const app = zoro({
   },
 })
 app.use(mixins)
+app.use(createLoading())
 
 /**
  * 由于后台绝大部分接口都需要用户预先登录才可以获取数据
@@ -59,7 +61,16 @@ if (CONFIG.DEBUG) {
 }
 class App extends Component {
   config = {
-    pages: PAGE.CONFIG_PAGES,
+    pages: [
+      'pages/home/home',
+      'pages/shop/shop',
+      'pages/user/user',
+      'pages/cart/cart',
+      'pages/search/search',
+      'pages/hotCake/hotCake',
+      'pages/secKill/secKill',
+      'pages/relogin/relogin',
+    ],
     window: {
       backgroundTextStyle: 'light',
       backgroundColor: '#2f3333',
@@ -67,15 +78,39 @@ class App extends Component {
     },
     tabBar: {
       backgroundColor: '#fff',
-      color: '#fff',
-      selectedColor: '#fff',
+      color: '#000',
+      selectedColor: '#e1b621',
       borderStyle: 'white',
-      list: PAGE.CONFIG_TABBAR_LIST,
+      list: [
+        {
+          text: '首页',
+          pagePath: 'pages/home/home',
+          iconPath: 'assets/tabbar/home.png',
+          selectedIconPath: 'assets/tabbar/home-active.png',
+        },
+        {
+          text: '商店',
+          pagePath: 'pages/shop/shop',
+          iconPath: 'assets/tabbar/shop.png',
+          selectedIconPath: 'assets/tabbar/shop-active.png',
+        },
+        {
+          text: '购物车',
+          pagePath: 'pages/cart/cart',
+          iconPath: 'assets/tabbar/cart.png',
+          selectedIconPath: 'assets/tabbar/cart-active.png',
+        },
+        {
+          text: '我的',
+          pagePath: 'pages/user/user',
+          iconPath: 'assets/tabbar/user.png',
+          selectedIconPath: 'assets/tabbar/user-active.png',
+        },
+      ],
     },
   }
 
   componentDidMount() {
-    Taro.hideTabBar()
     app.setup()
     dispatcher.user
       .checkLogin({}, { noAuth: true })

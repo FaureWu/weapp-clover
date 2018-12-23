@@ -2,15 +2,6 @@ import Taro from '@tarojs/taro'
 
 import { TOKEN_KEY } from '../constants/common'
 
-export async function getAuthorize(scopeName) {
-  try {
-    const { authSetting } = await Taro.getSetting()
-    return !!authSetting[`scope.${scopeName}`]
-  } catch (error) {
-    return false
-  }
-}
-
 export function weappApiFail(message) {
   return /:fail/.test(message)
 }
@@ -44,6 +35,15 @@ export function checkToken() {
       reject()
     }
   })
+}
+
+export function formatPagination(pagination = {}) {
+  const { pos, count } = pagination
+
+  return {
+    pos: parseInt(pos) || 0,
+    count: parseInt(count) || 0,
+  }
 }
 
 export function noop() {}

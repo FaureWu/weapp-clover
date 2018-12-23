@@ -2,7 +2,7 @@ import Taro from '@tarojs/taro'
 
 import { userLogin, uploadUserInfo, getUserInfo } from '../requests/user'
 import { TOKEN_KEY } from '../constants/common'
-import { getAuthorize, checkToken } from '../utils/tools'
+import { checkToken } from '../utils/tools'
 
 export default {
   namespace: 'user',
@@ -15,21 +15,19 @@ export default {
     systemInfo: {},
   },
 
-  async setup({ put }) {
+  setup({ put }) {
     Taro.getSystemInfo().then(systemInfo =>
       put({ type: 'update', payload: { systemInfo } }),
     )
-
-    try {
-      const authorize = await getAuthorize('userInfo')
-      if (authorize) {
-        put({ type: 'getInfo' })
-      }
-
-      put({ type: 'update', payload: { authorize } })
-    } catch (error) {
-      put({ type: 'update', payload: { authorize: false } })
-    }
+    Taro.getSetting()
+      .then(({ authSetting }) =>
+        put({
+          type: 'update',
+          payload: { authorize: authSetting['scope.userInfo'] },
+        }),
+      )
+      .catch(() => put({ type: 'update', payload: { authorize: false } }))
+    put({ type: 'getInfo' })
   },
 
   effects: {
@@ -50,6 +48,7 @@ export default {
     ) {
       await uploadUserInfo({ rawData, signature, encryptedData, iv })
       put({ type: 'getInfo' })
+      put({ type: 'update', payload: { authorize: true } })
     },
     async getInfo(action, { put }) {
       const { memberInfo } = await getUserInfo()

@@ -19,7 +19,6 @@
   },
   "parser": "babel-eslint",
   "globals": {
-    "CONFIG": true,
-    "PAGE": true
+    "CONFIG": true
   }
 }

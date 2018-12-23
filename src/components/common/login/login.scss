@@ -1,35 +1,38 @@
 @import '../../../styles/variable.scss';
 @import '../../../styles/common.scss';
 
+$logo-size: 200px;
+
 .login {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 500px;
-  background: white;
+  background: $main-color;
   padding: $page-spacing * 5 $page-spacing $page-spacing * 3;
 
   .logo {
-    width: 220px;
-    height: 220px;
+    width: $logo-size;
+    height: $logo-size;
     background: url(@oss/logo.png);
-    background-size: 220px 220px;
-    background-color: $grey-background-color;
+    background-size: $logo-size $logo-size;
+    background-color: white;
     border-radius: 50%;
   }
 
   .title {
     font-size: $title-font-size;
     margin: $block-spacing-v5 * 3 0 0;
-    color: $main-color;
+    color: $accent-color;
   }
 
   .btn {
     @include button-clear;
     font-size: $btn-font-size;
+    font-weight: bold;
     margin: $block-spacing-v5 0 $block-spacing-v5 / 2;
-    background: $main-color;
+    background: white;
     color: $accent-color;
     padding: 0 $block-spacing-v5 * 3;
     height: $btn-size-default;

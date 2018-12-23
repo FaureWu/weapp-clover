@@ -8,7 +8,7 @@ $maket-width: 340px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: rgba(white, .9);
+  background: $content-background-color;
   padding: $block-spacing-v4 $page-spacing;
 
   .item {
@@ -25,12 +25,12 @@ $maket-width: 340px;
       margin: 0 0 0 $block-spacing-v4 / 2;
     }
 
-    &.hot-cake {
+    &.hotcake {
       background-image: url(@oss/hot-cake.jpeg);
       background-size: $maket-width $maket-height;
     }
 
-    &.red-packet {
+    &.seckill {
       background-image: url(@oss/red-packet.jpeg);
       background-size: $maket-width $maket-height;
     }

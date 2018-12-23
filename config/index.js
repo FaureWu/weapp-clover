@@ -1,7 +1,6 @@
 const path = require('path')
 const fs = require('fs')
 const appConfig = require('./config')
-const page = require('./page')
 
 let localAppConfig = {}
 if (fs.existsSync(require.resolve('./config.local.js'))) {
@@ -73,13 +72,19 @@ const config = {
       SERVER: server,
       DEBUG: localAppConfig.debug || appConfig.debug,
     }),
-    PAGE: JSON.stringify(page),
   },
   weapp: {
     module: {
       postcss: {
         autoprefixer: {
           enable: true,
+        },
+        cssModules: {
+          enable: true,
+          config: {
+            namingPattern: 'global',
+            generateScopedName: '[name]__[local]___[hash:base64:5]'
+          },
         },
       },
       url: {
@@ -107,6 +112,13 @@ const config = {
       postcss: {
         autoprefixer: {
           enable: true,
+        },
+        cssModules: {
+          enable: true,
+          config: {
+            namingPattern: 'global',
+            generateScopedName: '[name]__[local]___[hash:base64:5]'
+          },
         },
       },
     },

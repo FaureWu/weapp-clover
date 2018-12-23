@@ -1,0 +1,46 @@
+@import '../../../styles/variable.scss';
+
+$commodity-width: 339px;
+
+.hotsale {
+  position: relative;
+  padding: $page-spacing;
+  background: $content-background-color;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0 0 $block-spacing-v1;
+
+    .title {
+      font-size: $header-font-size;
+      font-weight: bold;
+    }
+
+    .tip {
+      font-size: $tip-font-size;
+      color: $font-placeholder-color;
+      margin: 0 $block-spacing-v1;
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .left,
+    .right {
+      width: $commodity-width;
+
+      .commodity {
+        margin: $block-spacing-v4 0;
+        box-shadow: $box-shadow;
+      }
+    }
+  }
+}

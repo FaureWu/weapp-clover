@@ -2,7 +2,6 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 
 import ComponentCommonNavigation from '../../components/common/navigation/navigation'
-import ComponentCommonTabbar from '../../components/common/tabbar/tabbar'
 
 class PageCart extends Component {
   state = {
@@ -13,9 +12,8 @@ class PageCart extends Component {
   render() {
     return (
       <View>
-        <ComponentCommonNavigation title={PAGE.PAGES.CART.text} />
+        <ComponentCommonNavigation title="购物车" />
         <Text>待开发中，敬请期待</Text>
-        <ComponentCommonTabbar />
       </View>
     )
   }

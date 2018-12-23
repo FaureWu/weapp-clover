@@ -1,10 +1,11 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Image, Text } from '@tarojs/components'
+import classNames from 'classnames'
 
 import { noop } from '../../../utils/tools'
 import ComponentBaseNavigation from '../../base/navigation/navigation'
 
-import './navigation.scss'
+import styles from './navigation.scss'
 
 class ComponentHomeNavigation extends Component {
   static options = {
@@ -20,11 +21,13 @@ class ComponentHomeNavigation extends Component {
 
     return (
       <ComponentBaseNavigation>
-        <View className="navigation">
-          <Image className="logo" src="@oss/logo.png" />
-          <View className="search" onClick={onSearch}>
-            <View className="icon iconfont icon-search" />
-            <Text className="text">搜索</Text>
+        <View className={styles.navigation}>
+          <Image className={styles.logo} src="@oss/logo.png" />
+          <View className={styles.search} onClick={onSearch}>
+            <View
+              className={classNames('iconfont', 'icon-search', styles.icon)}
+            />
+            <Text className={styles.text}>搜索</Text>
           </View>
         </View>
       </ComponentBaseNavigation>

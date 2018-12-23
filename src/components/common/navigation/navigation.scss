@@ -34,6 +34,10 @@ $tool-icon-width: 30PX;
       align-items: center;
       font-size: $navigation-icon-font-size;
     }
+
+    .home {
+      font-size: $navigation-icon-font-size - 4PX;
+    }
   }
 
   .title {

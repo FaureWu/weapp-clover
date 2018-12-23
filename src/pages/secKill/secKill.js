@@ -3,15 +3,15 @@ import { View, Text } from '@tarojs/components'
 
 import ComponentCommonNavigation from '../../components/common/navigation/navigation'
 
-class PageRedPacket extends Component {
+class PageSecKill extends Component {
   render() {
     return (
       <View>
-        <ComponentCommonNavigation title={PAGE.PAGES.RED_PACKET.text} />
+        <ComponentCommonNavigation title="秒杀专区" />
         <Text>待开发中，敬请期待</Text>
       </View>
     )
   }
 }
 
-export default PageRedPacket
+export default PageSecKill

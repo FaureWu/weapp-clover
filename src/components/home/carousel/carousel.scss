@@ -32,7 +32,7 @@
       background: $placeholder-icon-color;
       transition: width .5s;
 
-      &.dot-active {
+      &.active {
         width: 30px;
         background: $accent-color;
       }

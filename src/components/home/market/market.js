@@ -1,18 +1,25 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
+import classNames from 'classnames'
+
+import styles from './market.scss'
 
 class ComponentHomeMarket extends Component {
-  handleGoHotCake = () =>
-    Taro.navigateTo({ url: `/${PAGE.PAGES.HOT_CAKE.path}` })
+  handleGoHotCake = () => Taro.navigateTo({ url: '/pages/hotCake/hotCake' })
 
-  handleGoRedPacket = () =>
-    Taro.navigateTo({ url: `/${PAGE.PAGES.RED_PACKET.path}` })
+  handleGoSecKill = () => Taro.navigateTo({ url: '/pages/secKill/secKill' })
 
   render() {
     return (
-      <View className="market">
-        <View className="item hot-cake" onClick={this.handleGoHotCake} />
-        <View className="item red-packet" onClick={this.handleGoRedPacket} />
+      <View className={styles.market}>
+        <View
+          className={classNames(styles.item, styles.hotcake)}
+          onClick={this.handleGoHotCake}
+        />
+        <View
+          className={classNames(styles.item, styles.seckill)}
+          onClick={this.handleGoSecKill}
+        />
       </View>
     )
   }

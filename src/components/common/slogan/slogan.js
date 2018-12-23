@@ -1,7 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
+import classNames from 'classnames'
 
-import './slogan.scss'
+import styles from './slogan.scss'
 
 class ComponentCommonSlogan extends Component {
   static options = {
@@ -10,18 +11,28 @@ class ComponentCommonSlogan extends Component {
 
   render() {
     return (
-      <View className="slogan">
-        <View className="item ">
-          <View className="iconfont icon-quality icon" />
-          <Text className="text">品质好物</Text>
+      <View className={styles.slogan}>
+        <View className={styles.item}>
+          <View
+            className={classNames('iconfont', 'icon-quality', styles.icon)}
+          />
+          <Text className={styles.text}>品质好物</Text>
         </View>
-        <View className="item ">
-          <View className="icon iconfont icon-service" />
-          <Text className="text">贴心服务</Text>
+        <View className={styles.item}>
+          <View
+            className={classNames('iconfont', 'icon-service', styles.icon)}
+          />
+          <Text className={styles.text}>贴心服务</Text>
         </View>
-        <View className="item ">
-          <View className="icon iconfont icon-free-shipping" />
-          <Text className="text">全场包邮</Text>
+        <View className={styles.item}>
+          <View
+            className={classNames(
+              'iconfont',
+              'icon-free-shipping',
+              styles.icon,
+            )}
+          />
+          <Text className={styles.text}>全场包邮</Text>
         </View>
       </View>
     )

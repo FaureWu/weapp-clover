@@ -3,7 +3,7 @@ import { View, Swiper, SwiperItem, Image } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import classNames from 'classnames'
 
-import './carousel.scss'
+import styles from './carousel.scss'
 
 @connect(({ banner }) => ({
   banners: banner.banners,
@@ -54,9 +54,9 @@ class ComponentHomeCarousel extends Component {
     const nextMargin = Taro.pxTransform(48)
 
     return (
-      <View className="carousel">
+      <View className={styles.carousel}>
         <Swiper
-          className="swiper"
+          className={styles.swiper}
           autoplay
           circular
           previousMargin={previousMargin}
@@ -71,17 +71,17 @@ class ComponentHomeCarousel extends Component {
                   : showBanner.bannerId
               }
             >
-              <Image className="image" src={showBanner.image} />
+              <Image className={styles.image} lazyLoad src={showBanner.image} />
             </SwiperItem>
           ))}
         </Swiper>
         {banners.length > 1 && (
-          <View className="dots">
+          <View className={styles.dots}>
             {banners.map((banner, index) => (
               <View
                 key={banner.bannerId}
-                className={classNames('dot', {
-                  'dot-active': currentDotIndex === index,
+                className={classNames(styles.dot, {
+                  [styles.active]: currentDotIndex === index,
                 })}
               />
             ))}

@@ -1,0 +1,60 @@
+@import '../../../styles/variable.scss';
+
+$commodity-height: 339px;
+$btn-size: 52px;
+
+.commodity {
+  position: relative;
+  width: 100%;
+  background: white;
+
+  .image {
+    width: 100%;
+    height: $commodity-height;
+  }
+
+  .name {
+    word-break: break-all;
+    font-size: $content-font-size;
+    padding: $block-spacing-v2 / 2 $block-spacing-v2;
+  }
+
+  .tool {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: $block-spacing-v2 / 2 $block-spacing-v2;
+
+    .price {
+      .sprice {
+        font-size: $price-font-size;
+        font-weight: bold;
+        color: $accent-color;
+
+        .unit {
+          font-size: $font-size-v2;
+          font-weight: normal;
+        }
+      }
+
+      .cprice {
+        font-size: $font-size-v2;
+        color: $placeholder-text-color;
+        text-decoration: line-through;
+      }
+    }
+
+    .btn {
+      font-size: $font-size-v6;
+      color: white;
+      width: $btn-size;
+      height: $btn-size;
+      background: rgba(black, .98);
+      border-radius: $border-radius;
+      text-align: center;
+      line-height: $btn-size;
+      font-weight: bold;
+    }
+  }
+}

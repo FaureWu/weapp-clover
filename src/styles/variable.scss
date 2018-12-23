@@ -2,7 +2,7 @@ $model-index: 1000;
 
 $border-radius: 8px;
 
-$content-background-color: #f5f5f5;
+$content-background-color: #fafafa;
 $main-color: #2f3333;
 $overlay-color: rgba(#3d3d3d, .3);
 $accent-color: #e1b621;
@@ -21,12 +21,21 @@ $block-spacing-v3: 20px;
 $block-spacing-v4: 24px;
 $block-spacing-v5: 28px;
 
+$font-size-v1: 22px;
+$font-size-v2: 24px;
+$font-size-v3: 26px;
+$font-size-v4: 28px;
+$font-size-v5: 30px;
+$font-size-v6: 32px;
+
+$price-font-size: 40px;
+$header-font-size: 34px;
 $title-font-size: 28px;
 $tab-font-size: 28px;
 $content-font-size: 26px;
 $btn-font-size: 26px;
 $assist-font-size: 24px;
-$tip-font-size: 22px;
+$tip-font-size: 24px;
 
 $btn-size-small: 66rpx;
 $btn-size-default: 80rpx;
@@ -44,8 +53,3 @@ $navigation-height: $capsule-padding * 2 + $capsule-height;
 $navigation-font-size: 15PX;
 $navigation-icon-font-size: 25PX;
 $navigation-box-shadow: 0 2PX 2PX #222;
-
-$tabbar-background-color: black;
-$tabbar-height: 90px;
-$tabbar-box-shadow: 0 2px 10px rgba(black, .3);
-$tabbar-icon-font-size: 22px;

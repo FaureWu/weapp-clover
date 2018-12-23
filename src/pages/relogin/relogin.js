@@ -3,7 +3,7 @@ import { View, Button } from '@tarojs/components'
 import { dispatcher } from '@opcjs/zoro'
 import classNames from 'classnames'
 
-import './relogin.scss'
+import styles from './relogin.scss'
 
 class PageRelogin extends Component {
   state = {
@@ -37,15 +37,19 @@ class PageRelogin extends Component {
   render() {
     const { error } = this.state
     return (
-      <View className="relogin">
+      <View className={styles.relogin}>
         <View
-          className={classNames('iconfont', 'icon', {
+          className={classNames('iconfont', styles.icon, {
             'icon-fail': error,
             'icon-clover': !error,
             'icon-login-fail': error,
           })}
         />
-        <Button disabled={!error} className="tip" onClick={this.handleLogin}>
+        <Button
+          disabled={!error}
+          className={styles.tip}
+          onClick={this.handleLogin}
+        >
           {error ? '登录失败，点击重试' : '正在登录，请稍后'}
         </Button>
       </View>

@@ -12,39 +12,3 @@
     display: none;
   }
 }
-
-@mixin tabbar {
-  position: relative;
-  z-index: 1;
-  background: rgba($tabbar-background-color, .3);
-  border-radius: $tabbar-height;
-  overflow: hidden;
-  box-shadow: $tabbar-box-shadow;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba($tabbar-background-color, .8);
-    filter: blur($tabbar-height);
-    z-index: -1;
-  }
-}
-
-@mixin tab-icon {
-  font-size: 48px;
-  padding: 8px 0 4px;
-}
-
-@mixin tab-text {
-  font-size: $tabbar-icon-font-size;
-  text-align: center;
-}

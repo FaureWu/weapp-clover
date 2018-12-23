@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import { isTabbarPage } from '../../../utils/routerHelper'
 import ComponentBaseNavigation from '../../base/navigation/navigation'
 
-import './navigation.scss'
+import styles from './navigation.scss'
 
 class ComponentCommonNavigation extends Component {
   static options = {
@@ -29,7 +29,7 @@ class ComponentCommonNavigation extends Component {
     })
   }
 
-  handleGoHome = () => Taro.switchTab({ url: `/${PAGE.PAGES.HOME.path}` })
+  handleGoHome = () => Taro.switchTab({ url: '/pages/home/home' })
 
   handleGoBack = () => Taro.navigateBack()
 
@@ -39,22 +39,30 @@ class ComponentCommonNavigation extends Component {
 
     return (
       <ComponentBaseNavigation>
-        <View className={classNames('navigation', { padding: !canBack })}>
-          <View className="tools">
+        <View
+          className={classNames(styles.navigation, {
+            [styles.padding]: !canBack,
+          })}
+        >
+          <View className={styles.tools}>
             {canBack && (
               <View
-                className="iconfont icon-arrow-left back"
+                className={classNames(
+                  'iconfont',
+                  'icon-arrow-left',
+                  styles.back,
+                )}
                 onClick={this.handleGoBack}
               />
             )}
             {canGoHome && (
               <View
-                className="iconfont icon-home home"
+                className={classNames('iconfont', 'icon-home', styles.home)}
                 onClick={this.handleGoHome}
               />
             )}
           </View>
-          <View className="title">{title}</View>
+          <View className={styles.title}>{title}</View>
         </View>
       </ComponentBaseNavigation>
     )

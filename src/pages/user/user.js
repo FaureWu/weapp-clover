@@ -3,7 +3,6 @@ import { View, Text } from '@tarojs/components'
 
 import ComponentCommonNavigation from '../../components/common/navigation/navigation'
 import ComponentCommonLogin from '../../components/common/login/login'
-import ComponentCommonTabbar from '../../components/common/tabbar/tabbar'
 
 class PageUser extends Component {
   state = {
@@ -15,9 +14,8 @@ class PageUser extends Component {
     return (
       <View>
         <ComponentCommonLogin />
-        <ComponentCommonNavigation title={PAGE.PAGES.USER.text} />
+        <ComponentCommonNavigation title="我的" />
         <Text>待开发中，敬请期待</Text>
-        <ComponentCommonTabbar />
       </View>
     )
   }

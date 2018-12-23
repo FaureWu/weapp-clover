@@ -7,7 +7,7 @@ class PageSearch extends Component {
   render() {
     return (
       <View>
-        <ComponentCommonNavigation title={PAGE.PAGES.SEARCH.text} />
+        <ComponentCommonNavigation title="搜索" />
         <Text>待开发中，敬请期待</Text>
       </View>
     )

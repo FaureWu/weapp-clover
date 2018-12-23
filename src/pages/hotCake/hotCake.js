@@ -7,7 +7,7 @@ class PageHotCake extends Component {
   render() {
     return (
       <View>
-        <ComponentCommonNavigation title={PAGE.PAGES.HOT_CAKE.text} />
+        <ComponentCommonNavigation title="热卖" />
         <Text>待开发中，敬请期待</Text>
       </View>
     )
