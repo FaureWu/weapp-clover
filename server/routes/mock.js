@@ -35,7 +35,7 @@ Object.keys(mocks).forEach(route => {
 
   if (validMethods.indexOf(method) !== -1 && url) {
     router[method.toLocaleLowerCase()](url, (req, res, next) =>
-      delay(0).then(() => mocks[route](req, res, next)),
+      delay(1).then(() => mocks[route](req, res, next)),
     )
   } else {
     throw Error(`invalid request [${route}]`)

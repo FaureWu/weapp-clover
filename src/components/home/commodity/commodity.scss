@@ -17,6 +17,8 @@ $btn-size: 52px;
     word-break: break-all;
     font-size: $content-font-size;
     padding: $block-spacing-v2 / 2 $block-spacing-v2;
+    min-height: 52px;
+    box-sizing: border-box;
   }
 
   .tool {
@@ -24,13 +26,15 @@ $btn-size: 52px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: $block-spacing-v2 / 2 $block-spacing-v2;
+    padding: $block-spacing-v2 / 2 0 $block-spacing-v2;
 
     .price {
       .sprice {
         font-size: $price-font-size;
         font-weight: bold;
         color: $accent-color;
+        height: 52px;
+        padding: 0 $block-spacing-v2;
 
         .unit {
           font-size: $font-size-v2;
@@ -42,6 +46,9 @@ $btn-size: 52px;
         font-size: $font-size-v2;
         color: $placeholder-text-color;
         text-decoration: line-through;
+        height: 30px;
+        padding: 0 $block-spacing-v2;
+        margin: $block-spacing-v1 / 2 0 0;
       }
     }
 
@@ -55,6 +62,7 @@ $btn-size: 52px;
       text-align: center;
       line-height: $btn-size;
       font-weight: bold;
+      margin: 0 $block-spacing-v2 0 0;
     }
   }
 }

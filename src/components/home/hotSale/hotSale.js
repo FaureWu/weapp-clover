@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
+import classNames from 'classnames'
 
 import ComponentCommonLoading from '../../common/loading/loading'
 import ComponentHomeCommodity from '../commodity/commodity'
@@ -14,14 +15,25 @@ import styles from './hotSale.scss'
   loading: state.loading.effect['hotSale/getHotSaleCommodityList'],
 }))
 class ComponentHomeHotSale extends Component {
+  static defaultProps = {
+    leftCommodities: [],
+    rightCommodities: [],
+    noMore: false,
+    loading: false,
+  }
+
   render() {
     const { leftCommodities, rightCommodities, loading } = this.props
 
     return (
-      <View className={styles.hotsale}>
+      <View className={classNames(styles.hotsale, 'skeleton-light')}>
         <View className={styles.header}>
-          <View className={styles.title}>今日热卖</View>
-          <View className={styles.tip}>每日推荐，超值抢购</View>
+          <View className={classNames(styles.title, 'skeleton-square')}>
+            今日热卖
+          </View>
+          <View className={classNames(styles.tip, 'skeleton-square')}>
+            每日推荐，超值抢购
+          </View>
         </View>
         <View className={styles.list}>
           <View className={styles.left}>

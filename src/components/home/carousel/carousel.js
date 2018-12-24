@@ -3,6 +3,7 @@ import { View, Swiper, SwiperItem, Image } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import classNames from 'classnames'
 
+import { SKELETON_BANNER } from '../../../constants/skeleton'
 import styles from './carousel.scss'
 
 @connect(({ banner }) => ({
@@ -14,13 +15,12 @@ class ComponentHomeCarousel extends Component {
   }
 
   state = {
-    showBanners: [],
+    showBanners: SKELETON_BANNER,
     currentDotIndex: 0,
   }
 
   componentWillReceiveProps(nextProps) {
     const { banners } = nextProps
-
     let showBanners = banners
     if (banners.length === 2) {
       showBanners = banners.concat(
@@ -71,7 +71,11 @@ class ComponentHomeCarousel extends Component {
                   : showBanner.bannerId
               }
             >
-              <Image className={styles.image} lazyLoad src={showBanner.image} />
+              <Image
+                className={classNames(styles.image, 'skeleton-square')}
+                lazyLoad
+                src={showBanner.image}
+              />
             </SwiperItem>
           ))}
         </Swiper>

@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { ScrollView, View, Image } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
+import classNames from 'classnames'
 
 import styles from './brand.scss'
 
@@ -18,7 +19,11 @@ class ComponentHomeBrand extends Component {
     return (
       <ScrollView className={styles.brand} scrollX>
         {brands.map(brand => (
-          <View id={brand.brandId} key={brand.brandId} className={styles.item}>
+          <View
+            id={brand.brandId}
+            key={brand.brandId}
+            className={classNames(styles.item, 'skeleton-square')}
+          >
             <Image className={styles.image} lazyLoad src={brand.brandLogo} />
             <View className={styles.text}>{brand.brandQty}款</View>
           </View>

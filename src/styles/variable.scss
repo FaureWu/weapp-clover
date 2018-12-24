@@ -1,4 +1,8 @@
-$model-index: 1000;
+$max-index: 1000;
+$skeleton-index: $max-index - 3;
+$skeleton-item-index: $skeleton-index + 2;
+$skeleton-container-index: $skeleton-index + 1;
+$model-index: $max-index;
 
 $border-radius: 8px;
 

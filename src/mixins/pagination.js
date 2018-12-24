@@ -42,8 +42,8 @@ export default {
     ) {
       put({ type: 'setPagination', payload: { pagination } })
       const oldState = select()
-      const oldFirstData = oldState[firstKey]
-      const oldSecondData = oldState[secondKey]
+      const oldFirstData = oldState[firstKey] || []
+      const oldSecondData = oldState[secondKey] || []
       const { pos } = oldState.pagination
 
       let newFirstData = []

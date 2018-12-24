@@ -1,4 +1,5 @@
 import { getHotBrandList } from '../requests/brand'
+import { SKELETON_BRAND } from '../constants/skeleton'
 
 export default {
   namespace: 'brand',
@@ -6,7 +7,7 @@ export default {
   mixins: ['common'],
 
   state: {
-    brands: [],
+    brands: SKELETON_BRAND,
   },
 
   effects: {

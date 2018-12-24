@@ -1,11 +1,12 @@
 import { getHotSaleCommodityList } from '../requests/commodity'
+import { SKELETON_COMMODITY } from '../constants/skeleton'
 
 export default {
   namespace: 'hotSale',
 
   state: {
-    leftCommodities: [],
-    rightCommodities: [],
+    leftCommodities: SKELETON_COMMODITY,
+    rightCommodities: SKELETON_COMMODITY,
   },
 
   mixins: ['common', 'pagination'],

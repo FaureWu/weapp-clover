@@ -1,4 +1,5 @@
 import { getBannerInfo } from '../requests/banner'
+import { SKELETON_BANNER } from '../constants/skeleton'
 
 export default {
   namespace: 'banner',
@@ -6,7 +7,7 @@ export default {
   mixins: ['common'],
 
   state: {
-    banners: [],
+    banners: SKELETON_BANNER,
   },
 
   effects: {

@@ -1,0 +1,41 @@
+@import '../../../styles/variable.scss';
+
+.skeleton {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background: $main-color;
+  z-index: $skeleton-index;
+  overflow: hidden;
+
+  .item {
+    position: fixed;
+    display: inline-block;
+    background: $grey-background-color;
+    z-index: $skeleton-item-index;
+
+    &.dark,
+    &.light {
+      z-index: $skeleton-container-index;
+    }
+
+    &.dark {
+      background: $main-color;
+    }
+
+    &.light {
+      background: white;
+    }
+
+    &.square {
+      border-radius: $border-radius;
+    }
+
+    &.circular {
+      border-radius: 50%;
+    }
+  }
+}

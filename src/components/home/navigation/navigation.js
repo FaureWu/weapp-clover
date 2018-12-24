@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Image, Text } from '@tarojs/components'
+import { View, Text } from '@tarojs/components'
 import classNames from 'classnames'
 
 import { noop } from '../../../utils/tools'
@@ -22,8 +22,11 @@ class ComponentHomeNavigation extends Component {
     return (
       <ComponentBaseNavigation>
         <View className={styles.navigation}>
-          <Image className={styles.logo} src="@oss/logo.png" />
-          <View className={styles.search} onClick={onSearch}>
+          <View className={classNames(styles.logo, 'skeleton-circular')} />
+          <View
+            className={classNames(styles.search, 'skeleton-cylinder')}
+            onClick={onSearch}
+          >
             <View
               className={classNames('iconfont', 'icon-search', styles.icon)}
             />

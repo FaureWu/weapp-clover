@@ -11,13 +11,13 @@ class ComponentHomeMarket extends Component {
 
   render() {
     return (
-      <View className={styles.market}>
+      <View className={classNames(styles.market, 'skeleton-light')}>
         <View
-          className={classNames(styles.item, styles.hotcake)}
+          className={classNames(styles.item, styles.hotcake, 'skeleton-square')}
           onClick={this.handleGoHotCake}
         />
         <View
-          className={classNames(styles.item, styles.seckill)}
+          className={classNames(styles.item, styles.seckill, 'skeleton-square')}
           onClick={this.handleGoSecKill}
         />
       </View>

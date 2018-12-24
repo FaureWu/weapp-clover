@@ -14,15 +14,29 @@ class ComponentCommonSlogan extends Component {
       <View className={styles.slogan}>
         <View className={styles.item}>
           <View
-            className={classNames('iconfont', 'icon-quality', styles.icon)}
+            className={classNames(
+              'iconfont',
+              'icon-quality',
+              styles.icon,
+              'skeleton-circular',
+            )}
           />
-          <Text className={styles.text}>品质好物</Text>
+          <Text className={classNames(styles.text, 'skeleton-square')}>
+            品质好物
+          </Text>
         </View>
         <View className={styles.item}>
           <View
-            className={classNames('iconfont', 'icon-service', styles.icon)}
+            className={classNames(
+              'iconfont',
+              'icon-service',
+              styles.icon,
+              'skeleton-circular',
+            )}
           />
-          <Text className={styles.text}>贴心服务</Text>
+          <Text className={classNames(styles.text, 'skeleton-square')}>
+            贴心服务
+          </Text>
         </View>
         <View className={styles.item}>
           <View
@@ -30,9 +44,12 @@ class ComponentCommonSlogan extends Component {
               'iconfont',
               'icon-free-shipping',
               styles.icon,
+              'skeleton-circular',
             )}
           />
-          <Text className={styles.text}>全场包邮</Text>
+          <Text className={classNames(styles.text, 'skeleton-square')}>
+            全场包邮
+          </Text>
         </View>
       </View>
     )

@@ -1,5 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Image, Text } from '@tarojs/components'
+import classNames from 'classnames'
 
 import styles from './commodity.scss'
 
@@ -15,17 +16,25 @@ class ComponentHomeCommodity extends Component {
 
     return (
       <View className={styles.commodity}>
-        <Image className={styles.image} lazyLoad src={commodityImage} />
-        <View className={styles.name}>{commodityName}</View>
+        <Image
+          className={classNames(styles.image, 'skeleton-square')}
+          lazyLoad
+          src={commodityImage}
+        />
+        <View className={classNames(styles.name, 'skeleton-square')}>
+          {commodityName}
+        </View>
         <View className={styles.tool}>
           <View className={styles.price}>
-            <View className={styles.sprice}>
+            <View className={classNames(styles.sprice, 'skeleton-square')}>
               <Text className={styles.unit}>¥</Text>
               {salePrice}
             </View>
-            <View className={styles.cprice}>¥{costPrice}</View>
+            <View className={classNames(styles.cprice, 'skeleton-square')}>
+              ¥{costPrice}
+            </View>
           </View>
-          <View className={styles.btn}>抢</View>
+          <View className={classNames(styles.btn, 'skeleton-square')}>抢</View>
         </View>
       </View>
     )

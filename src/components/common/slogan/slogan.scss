@@ -1,5 +1,7 @@
 @import "../../../styles/variable.scss";
 
+$slogan-size: 48rpx;
+
 .slogan {
   display: flex;
   flex-direction: row;
@@ -13,13 +15,19 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 60px;
+    padding: 0 $block-spacing-v1;
 
     .icon {
       font-size: 40px;
       color: $accent-color;
+      width: $slogan-size;
+      height: $slogan-size;
     }
 
     .text {
+      display: inline-block;
+      height: $slogan-size;
       color: $accent-color;
       font-size: $assist-font-size;
       margin: 0 0 0 $block-spacing-v1;

@@ -15,7 +15,6 @@ class ComponentBaseModal extends Component {
 
   componentWillReceiveProps(nextProps) {
     const { show } = this.state
-    console.log(show, nextProps.visible)
     if (nextProps.visible && show) {
       Taro.hideTabBar()
     } else {
@@ -40,6 +39,7 @@ class ComponentBaseModal extends Component {
       <View
         className={classNames(styles.modal, { [styles.show]: visible })}
         onTouchMove
+        onClick
       >
         <View className={styles.content}>{this.props.children}</View>
       </View>

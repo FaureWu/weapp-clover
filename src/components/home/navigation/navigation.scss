@@ -1,5 +1,6 @@
 @import '../../../styles/variable.scss';
 
+$icon-height: $navigation-height - 14PX;
 $search-height: $navigation-height - 14PX;
 $search-margin: 20PX;
 $search-background-color: #222;
@@ -16,10 +17,14 @@ $search-background-color: #222;
   box-shadow: $navigation-box-shadow;
 
   .logo {
-    width: $navigation-height;
-    height: $navigation-height;
+    width: $icon-height;
+    height: $icon-height;
     flex-grow: 0;
     flex-shrink: 0;
+    background-image: url(@oss/logo.png);
+    background-size: $navigation-height $navigation-height;
+    background-position: center center;
+    margin: 0 $search-margin / 2;
   }
 
   .search {
