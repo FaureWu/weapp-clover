@@ -14,12 +14,12 @@ class ComponentBaseModal extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { show } = this.state
-    if (nextProps.visible && show) {
-      Taro.hideTabBar()
-    } else {
-      Taro.showTabBar()
-    }
+    this.ensureTabbar(nextProps.visible)
+  }
+
+  componentDidMount() {
+    const { visible } = this.props
+    this.ensureTabbar(visible)
   }
 
   componentDidShow() {
@@ -30,6 +30,15 @@ class ComponentBaseModal extends Component {
 
   componentDidHide() {
     this.setState({ show: false })
+  }
+
+  ensureTabbar = visible => {
+    const { show } = this.state
+    if (visible && show) {
+      Taro.hideTabBar()
+    } else {
+      Taro.showTabBar()
+    }
   }
 
   render() {

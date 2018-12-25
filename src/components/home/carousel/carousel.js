@@ -21,17 +21,12 @@ class ComponentHomeCarousel extends Component {
 
   componentWillReceiveProps(nextProps) {
     const { banners } = nextProps
-    let showBanners = banners
-    if (banners.length === 2) {
-      showBanners = banners.concat(
-        banners.map(banner => ({
-          backup: true,
-          ...banner,
-        })),
-      )
-    }
+    this.resolveBanners(banners)
+  }
 
-    this.setState({ showBanners })
+  componentDidMount() {
+    const { banners } = this.props
+    this.resolveBanners(banners)
   }
 
   handleSwiperChange({ detail: { current } }) {
@@ -43,6 +38,20 @@ class ComponentHomeCarousel extends Component {
     }
 
     this.setState({ currentDotIndex })
+  }
+
+  resolveBanners = banners => {
+    let showBanners = banners
+    if (banners.length === 2) {
+      showBanners = banners.concat(
+        banners.map(banner => ({
+          backup: true,
+          ...banner,
+        })),
+      )
+    }
+
+    this.setState({ showBanners })
   }
 
   render() {

@@ -28,6 +28,7 @@ $slogan-size: 48rpx;
     .text {
       display: inline-block;
       height: $slogan-size;
+      line-height: $slogan-size;
       color: $accent-color;
       font-size: $assist-font-size;
       margin: 0 0 0 $block-spacing-v1;
