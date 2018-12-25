@@ -10,9 +10,9 @@
 
 ## 技术链接
 
-[zoro](https://github.com/FaureWu/zoro) redux框架
-[taro](https://taro.js.org/) 微信小程序框架taro
-[ztaro](https://github.com/FaureWu/ztaro) taro快速启动脚手架
+* [zoro](https://github.com/FaureWu/zoro) redux框架
+* [taro](https://taro.js.org/) 微信小程序框架taro
+* [ztaro](https://github.com/FaureWu/ztaro) taro快速启动脚手架
 
 ## 已开发的需求
 
@@ -57,7 +57,7 @@ __TAB_PAGE__参数用于标记该页面是否是一个微信小程序tabbar页�
 
 ## 开发交流
 
-请添加微信 `Faure5`，备注 `weapp-clover` 开源不易，如果好用，欢迎star
+请添加微信 `Faure5`，备注 `weapp-clover` 开源不易，如果好用，欢迎star
 
 <img src="https://img.baobeicang.com/user_upload/rc-upload-1539676937885-2.jpeg" width="150" />
 
