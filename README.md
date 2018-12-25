@@ -6,7 +6,7 @@
 
 ## 项目演示
 
-<img src="https://gxm-ecommerce.oss-cn-shenzhen.aliyuncs.com/user_upload/rc-upload-1545713993318-4.png" width="200" /><img src="https://gxm-ecommerce.oss-cn-shenzhen.aliyuncs.com/user_upload/rc-upload-1545713993318-2.gif" width="205" />
+<img src="https://gxm-ecommerce.oss-cn-shenzhen.aliyuncs.com/user_upload/rc-upload-1545713993318-4.png" width="200" /><img src="https://gxm-ecommerce.oss-cn-shenzhen.aliyuncs.com/user_upload/rc-upload-1545713993318-6.gif" width="207" />
 
 ## 技术链接
 

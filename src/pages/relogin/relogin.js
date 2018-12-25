@@ -40,7 +40,7 @@ class PageRelogin extends Component {
       <View className={styles.relogin}>
         <View
           className={classNames('iconfont', styles.icon, {
-            'icon-fail': error,
+            [styles.fail]: error,
             'icon-clover': !error,
             'icon-login-fail': error,
           })}

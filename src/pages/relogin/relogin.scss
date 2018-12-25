@@ -15,7 +15,7 @@
     font-size: $placeholder-icon-size;
     color: $placeholder-icon-color;
 
-    :global(&.icon-fail) {
+    &.fail {
       animation: none;
       font-size: 300px;
     }
