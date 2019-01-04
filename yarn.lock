@@ -180,10 +180,10 @@
   resolved "https://registry.yarnpkg.com/@opcjs/zoro-plugin/-/zoro-plugin-2.1.1.tgz#82a36d385232c1cba8d4d825e165e9de0241f429"
   integrity sha512-iWizsmX3CmvDEG2fzqzswYpG/V1dsXrja/tUxrf2rzqxiHBuLng1E7m1WL+l9EqjH1dOU9rvmLz3fou2cizgiQ==
 
-"@opcjs/zoro@^2.2.4":
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/@opcjs/zoro/-/zoro-2.2.4.tgz#8ee198d93c389b485e2684ecdb7018421c704b2d"
-  integrity sha512-ar74RvFAiQqzqHgoB468LEGQ2z2WKt0BJRN7tuvqKuvIvVPHMfbkfN2GSS3BP/n3kdQtnLqFZkqPxNxob9Vi5A==
+"@opcjs/zoro@^2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@opcjs/zoro/-/zoro-2.2.5.tgz#013cf07fb7a9f8b9f395ed9c1b453a483e4c1276"
+  integrity sha512-/ZvPalNc+D2HFHNjMXd3Ru00VcgoyIXoX7PQQVAKLvBiWlYJJjo+rExpAbRbY6r8E89WcTRsGUaWmPQ4ZSho8Q==
   dependencies:
     redux "^4.0.0"
     regenerator-runtime "^0.12.1"

@@ -7,6 +7,9 @@ import styles from './skeleton.scss'
 class ComponentCommonSkeleton extends Component {
   static defaultProps = {
     selector: 'skeleton',
+    backgroundColor: '#2f3333',
+    lightColor: 'white',
+    darkColor: '#2f3333',
   }
 
   state = {
@@ -58,22 +61,30 @@ class ComponentCommonSkeleton extends Component {
   })
 
   render() {
+    const { backgroundColor, lightColor, darkColor } = this.props
     const { lights, darks, circulars, squares, cylinders } = this.state
 
+    const skeletonStyle = { backgroundColor }
+
     return (
-      <View className={styles.skeleton} onTouchMove onClick>
+      <View
+        className={styles.skeleton}
+        style={skeletonStyle}
+        onTouchMove
+        onClick
+      >
         {darks.map(dark => (
           <View
             key={`${dark.top}-${dark.left}`}
             className={classNames(styles.item, styles.dark)}
-            style={this.createStyle(dark)}
+            style={{ ...this.createStyle(dark), backgroundColor: darkColor }}
           />
         ))}
         {lights.map(light => (
           <View
             key={`${light.top}-${light.left}`}
             className={classNames(styles.item, styles.light)}
-            style={this.createStyle(light)}
+            style={{ ...this.createStyle(light), backgroundColor: lightColor }}
           />
         ))}
         {squares.map(square => (

@@ -1,10 +1,11 @@
+const path = require('path')
 const gulp = require('gulp')
 const fs = require('fs')
 const oss = require('gulp-alioss-upload')
 const appConfig = require('./config/config')
 
 let localAppConfig = {}
-if (fs.existsSync('./config/config.local.js')) {
+if (fs.existsSync(path.resolve('./config/config.local.js'))) {
   localAppConfig = require('./config/config.local.js')
 }
 

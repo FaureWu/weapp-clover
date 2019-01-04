@@ -3,7 +3,7 @@ const fs = require('fs')
 const appConfig = require('./config')
 
 let localAppConfig = {}
-if (fs.existsSync(require.resolve('./config.local.js'))) {
+if (fs.existsSync(path.resolve('./config.local.js'))) {
   localAppConfig = require('./config.local.js')
 }
 
